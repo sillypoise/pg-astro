@@ -1,5 +1,6 @@
 ---
 import { Header } from "../components/header";
+import "../styles/tailwind.css"
 ---
 
 <html lang="en">
@@ -8,10 +9,10 @@ import { Header } from "../components/header";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + React</title>
+		<title>Astro + React + Tailwind</title>
 	</head>
-	<body>
-		<h1>Astro + React</h1>
+	<body class="center [--center-width:theme(contentWidth.2)] stack mbs-l bg-light-amber-2 text-dark-gray-2">
+		<h1 class="text-2 mbe-xl">Astro + React + TW as an extra bonus</h1>
 		<Header client:load />
 	</body>
 </html>

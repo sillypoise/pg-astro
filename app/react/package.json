@@ -4,11 +4,16 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "dev": "astro dev",
+        "dev": "run-p dev:*",
+        "dev:css": "pnpm generate:css --watch",
+        "dev:astro": "astro dev",
         "start": "astro dev",
-        "build": "astro build",
+        "build": "run-s build:*",
+        "build:css": "pnpm generate:css --minify",
+        "build:astro": "astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "generate:css": "tailwindcss -i ../tailwind/styles/tailwind.css -o src/styles/tailwind.css"
     },
     "dependencies": {
         "@astrojs/react": "^2.0.0",
@@ -18,6 +23,8 @@
     },
     "devDependencies": {
         "@types/react": "^18.0.27",
-        "@types/react-dom": "^18.0.10"
+        "@types/react-dom": "^18.0.10",
+        "tailwindcss": "^3.2.4",
+        "tailwindcss-logical": "^3.0.0"
     }
 }
