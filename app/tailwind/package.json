@@ -4,9 +4,12 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "dev": "astro dev",
+        "dev": "run-p dev:*",
+        "dev:css": "pnpm generate:css --watch",
+        "dev:astro": "astro dev",
         "start": "astro dev",
-        "build": "astro build",
+        "build:css": "pnpm generate:css --minify",
+        "build:astro": "astro build",
         "preview": "astro preview",
         "astro": "astro",
         "generate:css": "tailwindcss -i ./styles/tailwind.css -o src/styles/tailwind.css"
